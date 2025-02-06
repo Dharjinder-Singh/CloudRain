@@ -1,0 +1,11 @@
+{
+  "name": "inworkers",
+  "compatibility_date": "2025-02-06",
+  "main": "src/index.js",
+  "ai": {
+    "binding": "AI"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

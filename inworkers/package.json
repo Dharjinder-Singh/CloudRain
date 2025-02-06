@@ -1,0 +1,23 @@
+{
+  "name": "inworkers",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.6.4",
+    "vitest": "2.1.8",
+    "wrangler": "^3.107.3"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "dotenv": "^16.4.7",
+    "fs": "^0.0.1-security",
+    "puppeteer": "^24.2.0",
+    "websockets": "^0.2.0"
+  }
+}
