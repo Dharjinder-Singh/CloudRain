@@ -7,5 +7,17 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "TRANSCRIPT_KV",
+      "id": "592e7265648a473491adf989bba80422"
+    }],
+  "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "hail",
+          "database_id": "0f6db91b-10bf-471e-af96-ca16b6e2c591"
+        }
+      ]
 }
