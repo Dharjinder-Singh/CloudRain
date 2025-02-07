@@ -208,8 +208,10 @@ async function uploadAudio() {
     }
     
     // Step 2: Upload each chunk to Cloudflare Worker and print the result
+    let cnt=1;
     for (const chunk of chunks) {
-        await uploadChunk(chunk);
+        await uploadChunk(chunk,chunks.length,cnt);
+        cnt++;
     }
 }
 
@@ -251,7 +253,7 @@ function splitAudio(audioFile, startTime, duration, outputFile) {
 }
 
 // Function to upload the chunk to Cloudflare
-async function uploadChunk(chunkFile) {
+async function uploadChunk(chunkFile,totalChunks,curr) {
     console.log(`Uploading chunk: ${chunkFile}`);
     
     if (!fs.existsSync(chunkFile)) {
@@ -264,6 +266,11 @@ async function uploadChunk(chunkFile) {
     const response = await fetch(CLOUDFLARE_WORKER_URL, {
         method: "POST",
         headers: { "Content-Type": "audio/mpeg" },
+        headers: {
+          'Content-Type': 'audio/mpeg',
+          'X-Total-Chunks': totalChunks.toString(), // Send total number of chunks
+          'X-Current-Chunk': curr.toString()     // Send current chunk number
+      },
         body: audioBuffer
     });
     
