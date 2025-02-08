@@ -179,14 +179,14 @@ await iframeContent.click('button.preview-join-button');
 
 
 // Define meeting details
-const meetingId = '87681662669';  // Remove spaces if needed
-const passcode = 'd4KHL8';
+const meetingId = '83956990904';  // Remove spaces if needed
+const passcode = '5bKuY';
 const displayName = 'clarifi';
 
 // Call the function
 //joinZoomMeeting(meetingId, passcode, displayName)
-//  .then(() => console.log('Test completed successfully.'))
-//  .catch((error) => console.error('Test failed:', error));
+ // .then(() => console.log('Test completed successfully.'))
+ // .catch((error) => console.error('Test failed:', error));
 
 async function uploadAudio() {
     console.log(`Uploading: ${AUDIO_FILE}`);
